@@ -1,0 +1,24 @@
+logging.level.org.springframework.jdbc.core: trace
+logging.level.org.hibernate.SQL: DEBUG
+logging.level.org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+spring.security.user.name: user
+spring.security.user.password: password
+pdf.location: C:\\Users\\kumaran\\Downloads\\
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+  datasource:
+    initialization-mode: never
+datasource:
+  db-pdf:
+    jdbc-url: jdbc:sqlserver://ebilling.database.windows.net:1433;database=EBILLING_PDF_DB;
+    username: kumaran@ebilling
+    password: ku@WL270967
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    hibernate.hbm2ddl.auto:
+    hibernate.dialect: org.hibernate.dialect.SQLServerDialect
+jwt:
+  secret: InhouseApplicationsecretkeyInhouseApplicationsecretkeyInhouseApplicationsecretkeyInhouseApplicationsecretkeyInhouseApplicationsecretkey
+  expire-length: 1440 # minutes: 60x24
