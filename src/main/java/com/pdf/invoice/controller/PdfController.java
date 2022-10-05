@@ -85,7 +85,7 @@ public class PdfController {
 				//log.info("Invoice Number from DB : "+ invoiceNo);	
 				UserMaster userResponseDTO = userService.addUsers(user);
 				if(userResponseDTO!=null) {
-			log.info(userResponseDTO.getName() + "Getting users");
+			log.info(userResponseDTO.getName() + "inserted user Name");
 			return new ResponseEntity<>(userResponseDTO, HttpStatus.OK);
 			}
 			else {
