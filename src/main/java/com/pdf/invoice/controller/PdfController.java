@@ -17,7 +17,7 @@ import com.pdf.invoice.entity.UserMaster;
 import com.pdf.invoice.model.PDFResponseDTO;
 import com.pdf.invoice.model.UserResponseDTO;
 import com.pdf.invoice.service.PDFInvoiceService;
-import com.pdf.invoice.service.UserService;
+import com.pdf.invoice.service.EmployeeService;
 
 
 @RestController
@@ -29,7 +29,12 @@ public class PdfController {
 	PDFInvoiceService pdfInvoiceService;
 	
 	@Autowired
-	UserService userService;
+	EmployeeService userService;
+	
+	@RequestMapping(path="employees", method=RequestMethod.GET)
+	public String goHome(){
+		return "index";
+	}
 	
 	@RequestMapping(value = "getPdf", method = RequestMethod.GET)
 	public ResponseEntity<?> getPDF(

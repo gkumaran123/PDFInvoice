@@ -9,11 +9,11 @@ public class UserResponseDTO {
 	private String name;
 	private String mobile;
 	private String city;
-	private String password;
+	private String email;
 	@Override
 	public String toString() {
-		return "UserResponseDTO [Id=" + Id + ", name=" + name + ", mobile=" + mobile + ", city=" + city + ", password="
-				+ password + "]";
+		return "UserResponseDTO [Id=" + Id + ", name=" + name + ", mobile=" + mobile + ", city=" + city + ", email="
+				+ email + "]";
 	}
 	public int getId() {
 		return Id;
@@ -39,11 +39,11 @@ public class UserResponseDTO {
 	public void setCity(String city) {
 		this.city = city;
 	}
-	public String getPassword() {
-		return password;
+	public String getEmail() {
+		return email;
 	}
-	public void setPassword(String password) {
-		this.password = password;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	
 	

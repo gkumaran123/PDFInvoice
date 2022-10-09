@@ -15,6 +15,24 @@ public class PDFResponseDTO {
 		this.message = null;
 		this.pdfData = null;
 	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	public String getMessage() {
+		return message;
+	}
+	public void setMessage(String message) {
+		this.message = message;
+	}
+	public byte[] getPdfData() {
+		return pdfData;
+	}
+	public void setPdfData(byte[] pdfData) {
+		this.pdfData = pdfData;
+	}
 	
 
 }

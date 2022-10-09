@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,11 +24,9 @@ import com.pdf.invoice.repo.UserRepository;
 
 @Service
 @Transactional
-public class UserService {
+public class EmployeeService {
 	
-	private Logger log = LoggerFactory.getLogger(UserService.class);
-	
-	private String EBILLING_DOCUMENT_SERVER_PATH="EBILLING_DOCUMENT_SERVER_PATH";
+	private Logger log = LoggerFactory.getLogger(EmployeeService.class);
 	
 	@Value("${pdf.location}")
     private String pdfLocation;
@@ -63,11 +62,10 @@ public class UserService {
 		usersResponse.forEach(user->{
 			UserResponseDTO UserResponseDTO = new UserResponseDTO();	
 			UserResponseDTO.setId(user.getId());
-			System.out.println(user.getName()+" : Name");
 			UserResponseDTO.setName(user.getName());
 			UserResponseDTO.setMobile(user.getMobile());
 			UserResponseDTO.setCity(user.getCity());
-			UserResponseDTO.setPassword(user.getPassword());
+			UserResponseDTO.setEmail(user.getEmail());
 			users.add(UserResponseDTO);
 		});
 		return users;
@@ -75,14 +73,23 @@ public class UserService {
 
 	public UserMaster addUsers(UserResponseDTO user) {
 		UserMaster userMaster = new UserMaster();
-		System.out.println(user.toString());
 		userMaster.setId(user.getId());
 		userMaster.setName(user.getName());
 		userMaster.setMobile(user.getMobile());
 		userMaster.setCity(user.getCity());
-		userMaster.setPassword(user.getPassword());
+		userMaster.setEmail(user.getEmail());
 		
 		return userRepo.save(userMaster);
+	}
+
+	public Optional<UserMaster> findById(Integer employeeId) {
+		return userRepo.findById(employeeId);
+		
+	}
+
+	public void deleteById(Integer employeeId) {
+		userRepo.deleteById(employeeId);
+		
 	}
 
 }

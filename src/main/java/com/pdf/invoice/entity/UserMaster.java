@@ -14,13 +14,14 @@ import lombok.Setter;
 
 @Entity
 @Data
-@Table(name = "PDF_USER")
+@Table(name = "EBILL_EMPLOYEE1")
 @Getter
 @Setter
 @NoArgsConstructor
 public class UserMaster {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="Id", insertable=true, updatable=true)
 	private int id;
 	
@@ -33,8 +34,8 @@ public class UserMaster {
 	@Column(name="City",insertable=true, updatable=true)
 	private String city;
 	
-	@Column(name="Password",insertable=true, updatable=true)
-	private String password;
+	@Column(name="Email",insertable=true, updatable=true)
+	private String email;
 
 	public int getId() {
 		return id;
@@ -68,12 +69,12 @@ public class UserMaster {
 		this.city = city;
 	}
 
-	public String getPassword() {
-		return password;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	
 }
