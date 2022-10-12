@@ -1,9 +1,20 @@
 logging.level.org.springframework.jdbc.core: trace
 logging.level.org.hibernate.SQL: DEBUG
 logging.level.org.hibernate.type.descriptor.sql.BasicBinder: TRACE
-spring.security.user.name: user
-spring.security.user.password: password
+spring.mvc.view.prefix: WEB-INF/jsp/
+spring.mvc.view.suffix: .jsp
 pdf.location: C:\\Users\\kumaran\\Downloads\\
+
+spring.thymeleaf.mode: LEGACYHTML5
+spring.thymeleaf.cache: false
+spring.datasource.initialize: true
+web:
+  cors:
+    allowed-origins: "http://localhost:4200"
+    allowed-methods: GET, POST, PATCH, PUT, DELETE, OPTIONS, HEAD
+    max-age: 3600
+    allowed-headers: "Access-Control-Allow-Origin"
+    exposed-headers: "X-Get-Header"
 spring:
   config:
     activate:
