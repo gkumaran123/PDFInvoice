@@ -18,17 +18,24 @@ public class EmployeeSecurityConfiguration extends WebSecurityConfigurerAdapter 
 
     @Override
     public void configure(WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/resources/**");
+        web.ignoring().antMatchers("/fonts/**", "/images/**", "/css/**", "/js/**");
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests().antMatchers("/").permitAll().antMatchers("/welcome", "/")
-            .hasAnyRole("USER", "ADMIN").antMatchers("/list").hasAnyRole("USER", "ADMIN")
+        http.authorizeRequests()
+        	.antMatchers("/").not().authenticated()
+        	.antMatchers("/welcome").not().authenticated()
+        	.antMatchers("/list").hasAnyRole("USER", "ADMIN")
             .antMatchers("/addEmployeeForm").hasAnyRole("ADMIN").anyRequest().authenticated().and().formLogin()
-            .permitAll().and().logout().permitAll();
+            .defaultSuccessUrl("/list")
+            .permitAll().and().logout().logoutSuccessUrl("/welcome").permitAll();
 
         http.csrf().disable();
+        http
+        .headers()
+           .defaultsDisabled()
+           .cacheControl();
     }
     
     @Bean
