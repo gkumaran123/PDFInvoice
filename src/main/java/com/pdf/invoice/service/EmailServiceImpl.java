@@ -27,6 +27,7 @@ public class EmailServiceImpl implements EmailService {
 
 	@Value("${spring.mail.username}") private String sender;
 	@Value("${recipient}") private String recipient;
+	@Value("${cc.recipient}") private String CCrecipient;
 	private String AJANTHAENGINEERING= "AjanthaEngineering@gmail.com";
 
 	// Method 1
@@ -43,6 +44,7 @@ public class EmailServiceImpl implements EmailService {
 
 			// Setting up necessary details
 			mailMessage.setFrom(AJANTHAENGINEERING);
+			mailMessage.setCc(CCrecipient);
 			mailMessage.setTo(recipient);
 			mailMessage.setSubject(details.getName()+" "+details.getMobile());
 			mailMessage.setText(details.getEmail()+"<br> "+details.getContent());

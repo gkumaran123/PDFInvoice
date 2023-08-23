@@ -4,7 +4,8 @@ logging.level.org.hibernate.type.descriptor.sql.BasicBinder: TRACE
 spring.mvc.view.prefix: WEB-INF/jsp/
 spring.mvc.view.suffix: .jsp
 pdf.location: C:\\Users\\kumaran\\Downloads\\
-recipient: keerthanaravichandran1998@gmail.com
+recipient: priyasathiya48@gmail.com
+cc.recipient: kumaranwip@gmail.com 
 spring.thymeleaf.mode: LEGACYHTML5
 spring.thymeleaf.cache: false
 spring.datasource.initialize: true
