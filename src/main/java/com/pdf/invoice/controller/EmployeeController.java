@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.pdf.invoice.entity.EmailDetails;
 import com.pdf.invoice.entity.UserMaster;
 import com.pdf.invoice.model.UserResponseDTO;
 import com.pdf.invoice.service.EmployeeService;
@@ -41,6 +42,14 @@ public class EmployeeController {
 	@RequestMapping({"/welcome","/","/home"})
 	public ModelAndView firstPage() {
 		return new ModelAndView("welcome");
+	}
+	
+	@RequestMapping({"/contactus"})
+	public ModelAndView contactUS() {
+		ModelAndView mav = new ModelAndView("contactus");
+		EmailDetails emaildetails = new EmailDetails();
+		mav.addObject("details", emaildetails);
+		return mav;
 	}
 	
 	@GetMapping("/list")

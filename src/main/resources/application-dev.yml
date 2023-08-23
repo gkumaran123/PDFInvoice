@@ -4,7 +4,7 @@ logging.level.org.hibernate.type.descriptor.sql.BasicBinder: TRACE
 spring.mvc.view.prefix: WEB-INF/jsp/
 spring.mvc.view.suffix: .jsp
 pdf.location: C:\\Users\\kumaran\\Downloads\\
-
+recipient: keerthanaravichandran1998@gmail.com
 spring.thymeleaf.mode: LEGACYHTML5
 spring.thymeleaf.cache: false
 spring.datasource.initialize: true
@@ -19,6 +19,17 @@ spring:
   config:
     activate:
       on-profile: dev
+  mail:
+        host: smtp.gmail.com
+        password: aahgcbnsfwsuoipu
+        port: 587
+        properties:
+            mail:
+                smtp:
+                    auth: true
+                    starttls:
+                        enable: true
+        username: kumaranvec2789@gmail.com
 
   datasource:
     initialization-mode: never
@@ -30,6 +41,7 @@ datasource:
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
     hibernate.hbm2ddl.auto:
     hibernate.dialect: org.hibernate.dialect.SQLServerDialect
+    
 jwt:
   secret: InhouseApplicationsecretkeyInhouseApplicationsecretkeyInhouseApplicationsecretkeyInhouseApplicationsecretkeyInhouseApplicationsecretkey
   expire-length: 1440 # minutes: 60x24
