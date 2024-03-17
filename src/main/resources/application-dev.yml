@@ -36,12 +36,12 @@ spring:
     initialization-mode: never
 datasource:
   db-pdf:
-    jdbc-url: jdbc:sqlserver://ebilling.database.windows.net:1433;database=EBILLING_PDF_DB;
-    username: kumaran@ebilling
-    password: ku@WL270967
-    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    jdbc-url: jdbc:postgresql://72.167.46.93:5432/oxford
+    username: myadmin
+    password: Trytry@123!!!!
+    driver-class-name: org.postgresql.Driver
     hibernate.hbm2ddl.auto:
-    hibernate.dialect: org.hibernate.dialect.SQLServerDialect
+    hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
     
 jwt:
   secret: InhouseApplicationsecretkeyInhouseApplicationsecretkeyInhouseApplicationsecretkeyInhouseApplicationsecretkeyInhouseApplicationsecretkey
