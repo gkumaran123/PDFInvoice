@@ -8,6 +8,6 @@ spring:
       ACCEPT_CASE_INSENSITIVE_ENUMS: true
       
 server:
-  port: 8686
+  port: 8181
   servlet:
     context-path: /PDFInvoice
