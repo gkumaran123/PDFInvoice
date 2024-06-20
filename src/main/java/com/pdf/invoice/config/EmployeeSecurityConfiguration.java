@@ -30,6 +30,7 @@ public class EmployeeSecurityConfiguration extends WebSecurityConfigurerAdapter 
         	.antMatchers("/contactus").not().authenticated()
         	.antMatchers("/list").hasAnyRole("USER", "ADMIN")
             .antMatchers("/addEmployeeForm").hasAnyRole("ADMIN").anyRequest().authenticated().and().formLogin()
+            .loginPage("/login")
             .defaultSuccessUrl("/list")
             .permitAll().and().logout().logoutSuccessUrl("/welcome").permitAll();
 
