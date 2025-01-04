@@ -22,6 +22,7 @@ import com.pdf.invoice.service.EmployeeService;
 
 @Controller
 @CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*", exposedHeaders = "Authorization")
+//@RequestMapping("/a")
 public class EmployeeController {
 	
 	@Autowired

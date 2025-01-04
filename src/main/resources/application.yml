@@ -1,4 +1,6 @@
 spring.profiles.active: dev
+server.servlet.session.cookie.name: AJANTHASESSION
+server.servlet.context-path: /a
 
 spring:
   jackson:

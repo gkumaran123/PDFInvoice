@@ -1,19 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login</title>
+	<title>Ajantha Engineering</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link th:href="@{/css/style.css}" rel="stylesheet" />
+	<link th:href="@{/css/main.css}" rel="stylesheet" />
+	<link rel="icon" type="image/x-icon" th:href="@{images/favicon-32x32.png}">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script th:src="@{/js/main.js}"></script>
 </head>
 <body>
+	<header id="myHeader">
+		<div class="container1">
+
+
+			<div class="logo">
+				AJANTHA <br>ENGINEERING
+			</div>
+
+
+
+			<div class="topnav" id="myTopnav">
+				<a th:href="@{/welcome}" class="active">Home</a> <a href="#About">About</a>
+				<a th:href="@{/contactus}">Contact</a> <a th:href="@{/login}">Login</a>
+				<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+					<i class="fa fa-bars"></i>
+				</a>
+			</div>
+			<div class="logo1">
+				Tel. +91 72993 95566
+			</div>
+		</div>
+	</header>
 	<div class="container-fluid">
 		<div class="row ">
 			<!-- IMAGE CONTAINER BEGIN -->
-			<div th:style="'background-image: url(' + @{/images/bg.jpg} + ');'" class="col-lg-6 col-md-6 d-none d-md-block infinity-image-container"></div>
+			<div th:style="'background-image: url(' + @{/images/Ajantha_bg.png} + ');'" class="col-lg-6 col-md-6 d-none d-md-block infinity-image-container"></div>
 			<!-- IMAGE CONTAINER END -->
 
 			<!-- FORM CONTAINER BEGIN -->
@@ -21,13 +46,13 @@
 				<div class="col-lg-9 col-md-12 col-sm-9 col-xs-12 infinity-form">
 					<!-- Company Logo -->
 					<div class="text-center mb-3 mt-5">
-						<img th:src="@{images/logo.png}" width="150px">
+						<img th:src="@{images/Ajantha_Logo.png}" width="150px">
 					</div>
 					<div class="text-center mb-4">
 			      <h4>Login into your account</h4>
 			    </div>
 			    <!-- Form -->
-					<form action="/login" method="post" class="px-3">
+					<form action="/a/login" method="post" class="px-3">
 						<!-- Input Box -->
 						<div class="form-input">
 							<span><i class="fa fa-envelope-o"></i></span>
